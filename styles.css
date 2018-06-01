@@ -2,3 +2,13 @@
   background-color: rgb(110, 199, 230);
   font-family: 'Inconsolata', monospace;
 }
+
+h1 {
+  font-size: 72pt;
+  margin-top: 100px;
+  text-align: center;
+}
+
+#verbiage {
+  font-size: 18pt;
+}
