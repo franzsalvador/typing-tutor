@@ -37,7 +37,6 @@ function showChars(input) {
 
 //  Create an Object to represent the application state, and make the characters a property.
 var appState = {
-  characters: arrObj
+  characters: arrObj,
+  currentCharacter: 0
 }
-
-showChars(arrObj)
