@@ -23,6 +23,7 @@ function single(input) {
     return spanChar
   }
 }
+
 // Loop through character objects
 // For each of them
 //  Create a new span
@@ -32,6 +33,11 @@ function showChars(input) {
     var runSingle = single(input[i])
     $challenge.appendChild(runSingle)
   }
+}
+
+//  Create an Object to represent the application state, and make the characters a property.
+var appState = {
+  characters: arrObj
 }
 
 showChars(arrObj)
