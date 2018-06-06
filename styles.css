@@ -1,0 +1,16 @@
+* {
+  background-color: rgb(110, 199, 230);
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+}
+
+h1 {
+  font-size: 72pt;
+  margin-top: 100px;
+  text-align: center;
+}
+
+#challenge {
+  font-size: 24pt;
+  text-align: center;
+}
