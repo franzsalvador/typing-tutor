@@ -35,8 +35,14 @@ function showChars(input) {
   }
 }
 
-//  Create an Object to represent the application state, and make the characters a property.
+// Create an Object to represent the application state, and make the characters a property.
+// Add a property to the application state to track the index of the currentCharacter.
+// Define a CSS class to highlight the current-character.
+// Enhance function that renders a character to conditionally add a special current-character class.
+
 var appState = {
   characters: arrObj,
   currentCharacter: 0
 }
+
+showChars(arrObj)
