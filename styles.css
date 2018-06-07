@@ -20,5 +20,6 @@ h1 {
 }
 
 .failed {
+  font-size: 36pt;
   color: red;
 }

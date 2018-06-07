@@ -7,7 +7,8 @@ function toObjects(characters) {
   var arrayObj = []
   for (var i = 0; i < characters.length; i++) {
     var newObject = {
-      letter: characters[i], failures: 0
+      letter: characters[i],
+      failures: 0
     }
     arrayObj.push(newObject)
   }
@@ -16,8 +17,11 @@ function toObjects(characters) {
 
 function single(input, index, current) {
   var spanChar = document.createElement('span')
-  if (index === current) {
+  if (index === current && appState.characters[appState.currentCharacter].failures === 0) {
     spanChar.className = 'currentChar'
+  }
+  else if (index === current && appState.characters[appState.currentCharacter].failures > 0) {
+    spanChar.className = 'failed'
   }
   spanChar.textContent = input.letter
   return spanChar
