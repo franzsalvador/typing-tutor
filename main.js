@@ -41,8 +41,11 @@ var appState = {
   currentCharacter: 0
 }
 
-document.addEventListener('keydown', function() {
-  $challenge.textContent = "  "
+document.addEventListener('keydown', function () {
+  $challenge.textContent = ''
+  if (event.key !== appState.characters[appState.currentCharacter].letter) {
+    appState.characters[appState.currentCharacter].failures++
+  }
   showChars(arrObj)
 })
 
