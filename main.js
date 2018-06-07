@@ -19,7 +19,7 @@ function single(input, index, current) {
   if (index === current) {
     spanChar.className = 'currentChar'
   }
-  spanChar.textContent = input.letter // return a span?
+  spanChar.textContent = input.letter //
   return spanChar
 }
 // Loop through character objects
@@ -40,5 +40,10 @@ var appState = {
   characters: arrObj,
   currentCharacter: 0
 }
+
+document.addEventListener('keydown', function() {
+  $challenge.textContent = "  "
+  showChars(arrObj)
+})
 
 showChars(arrObj)
