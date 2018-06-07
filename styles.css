@@ -18,3 +18,7 @@ h1 {
 .currentChar {
   font-size: 36pt;
 }
+
+.failed {
+  color: red;
+}
