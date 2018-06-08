@@ -34,23 +34,23 @@ function showChars(characters) {
   }
 }
 
-var appState = {
-  characters: arrObj,
-  currentCharacter: 0
-}
-
 window.addEventListener('keydown', function (event) {
-  $challenge.textContent = ''
+  $challenge.innerHTML = ''
   if (event.key === 'Shift') {
     return
   }
   if (event.key === appState.characters[appState.currentCharacter].letter) {
     appState.currentCharacter++
   }
-  else if (event.key !== appState.characters[appState.currentCharacter].letter) {
+  else {
     appState.characters[appState.currentCharacter].failures++
   }
   showChars(arrObj)
 })
+
+var appState = {
+  characters: arrObj,
+  currentCharacter: 0
+}
 
 showChars(arrObj)
