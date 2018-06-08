@@ -24,3 +24,9 @@ h1 {
   font-size: 36pt;
   color: red;
 }
+
+p {
+  margin: 50px;
+  font-size: 40pt;
+  color: white;
+}

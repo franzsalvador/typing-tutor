@@ -2,6 +2,7 @@
 var quote = 'Music produces a kind of pleasure which human nature cannot do without.'
 var arrObj = toObjects(quote)
 var $challenge = document.getElementById('challenge')
+var gameOver = document.querySelector('p')
 
 function toObjects(characters) {
   var arrayObj = []
@@ -36,21 +37,38 @@ function showChars(characters) {
 
 window.addEventListener('keydown', function (event) {
   $challenge.innerHTML = ''
-  if (event.key === 'Shift') {
+  if (appState.currentCharacter === appState.characters.length) {
+    score()
+  }
+  else if (event.key === 'Shift') {
+    appState.total++
     return
   }
-  if (event.key === appState.characters[appState.currentCharacter].letter) {
+  else if (event.key === appState.characters[appState.currentCharacter].letter) {
     appState.currentCharacter++
+    appState.total++
   }
   else {
     appState.characters[appState.currentCharacter].failures++
+    appState.total++
   }
   showChars(arrObj)
 })
 
 var appState = {
   characters: arrObj,
-  currentCharacter: 0
+  currentCharacter: 0,
+  total: 0 //
+}
+
+function score() {
+  var totalFails = 0
+  for (var i = 0; i < appState.characters.length; i++) {
+    totalFails += appState.characters[i].failures
+  }
+  var score = Math.round(((appState.total - totalFails) / appState.total) * 100) + '%'
+  var message = 'Nice work! You scored ' + score + ' accuracy! Game Over.'
+  gameOver.textContent = message
 }
 
 showChars(arrObj)
