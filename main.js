@@ -17,10 +17,10 @@ function toObjects(characters) {
 
 function single(input, index, current) {
   var spanChar = document.createElement('span')
-  if (index === current && appState.characters[appState.currentCharacter].failures === 0) {
+  if (index === current) {
     spanChar.className = 'currentChar'
   }
-  else if (index === current && appState.characters[appState.currentCharacter].failures > 0) {
+  if (index === current && appState.characters[appState.currentCharacter].failures > 0) {
     spanChar.className = 'failed'
   }
   spanChar.textContent = input.letter
@@ -44,7 +44,10 @@ window.addEventListener('keydown', function (event) {
   if (event.key === 'Shift') {
     return
   }
-  if (event.key !== appState.characters[appState.currentCharacter].letter) {
+  if (event.key === appState.characters[appState.currentCharacter].letter) {
+    appState.currentCharacter++
+  }
+  else if (event.key !== appState.characters[appState.currentCharacter].letter) {
     appState.characters[appState.currentCharacter].failures++
   }
   showChars(arrObj)
